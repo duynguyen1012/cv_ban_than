@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sinh viên - Duy 2006</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f4; padding: 20px; }
+        form { background: white; padding: 20px; border-radius: 8px; max-width: 500px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #333; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"] {
+            width: 100%; padding: 8px; box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="#">
+        <h2>Thông Tin Sinh Viên IT</h2>
+        
+        <div class="form-group">
+            <label for="txt-hoten">Họ và tên:</label>
+            <input type="text" id="txt-hoten" placeholder="Nhập tên đầy đủ của Duy..." />
+        </div>
+
+        <div class="form-group">
+            <label>Mật khẩu cổng đào tạo:</label>
+            <input type="password" placeholder="Nhập pass bảo mật..." />
+        </div>
+
+        <div class="form-group">
+            <label for="txt-email">Email sinh viên CMC:</label>
+            <input type="email" id="txt-email" placeholder="duy.it2006@cmc.edu.vn" />
+        </div>
+
+        <div class="form-group">
+            <label for="txt-gpa">Điểm GPA mục tiêu:</label>
+            <input type="number" id="txt-gpa" min="0" max="4" step="0.1" value="3.5" />
+        </div>
+
+        <div class="form-group">
+            <label for="dtpk-ngaysinh">Ngày sinh:</label>
+            <input type="date" id="dtpk-ngaysinh" />
+        </div>
+        <div class="form-group">
+            <label>Giờ vào lớp lý thuyết:</label>
+            <input type="time" />
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            <label>Tình trạng học tập:</label>
+            <input type="checkbox" id="cb_trangthai" checked /> Đang theo học
+        </div>
+
+        <div class="form-group">
+            <label for="cl-yeuthich">Màu sắc UI yêu thích (Duy thích màu trắng):</label>
+            <input type="color" id="cl-yeuthich" value="#ffffff" />
+        </div>
+
+        <div class="form-group">
+            <label>Mức độ đam mê cầu lông:</label>
+            0 <input type="range" min="0" max="100" /> 100
+        </div>
+
+        <div class="form-group">
+            <label>Ảnh thẻ sinh viên:</label>
+            <input type="file" />
+        </div>
+
+        <div class="form-group">
+            <label>Mã định danh (Không được sửa):</label>
+            <input type="text" value="CMC-2026-DUY" readonly style="background: #eee;" />
+        </div>
+
+        <input type="hidden" name="user_id" value="12345" />
+
+        <div class="form-group">
+            <label>Xác nhận bằng icon (type image):</label>
+            <input type="image" src="https://cdn-icons-png.flaticon.com/512/190/190411.png" width="40px" alt="submit" />
+        </div>
+
+        <input type="button" value="Lưu tạm" onclick="alert('Đã lưu nhé Duy!')" />
+        <input type="reset" value="Xóa hết làm lại" />
+        <button type="submit">Gửi thông tin</button>
+    </form>
+
+</body>
+</html>

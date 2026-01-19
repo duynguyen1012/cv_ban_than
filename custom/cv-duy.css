@@ -1,0 +1,267 @@
+﻿/* --- BIẾN MÀU SẮC (DỄ CHỈNH SỬA) --- */
+:root {
+    --primary-color: #2563eb;    /* Xanh dương hoàng gia (Royal Blue) */
+    --secondary-color: #1e40af;  /* Xanh đậm hơn cho điểm nhấn */
+    --sidebar-bg: #0f172a;       /* Màu nền sidebar tối (Slate 900) */
+    --text-main: #334155;        /* Màu chữ chính */
+    --text-light: #64748b;       /* Màu chữ phụ */
+    --bg-body: #f1f5f9;          /* Nền trang xám nhạt */
+    --white: #ffffff;
+}
+
+/* --- RESET & FONT --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* --- KHUNG CV CHÍNH --- */
+.cv-container {
+    width: 1000px;
+    background-color: var(--white);
+    display: flex;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Bóng đổ xịn */
+    overflow: hidden; /* Để bo góc không bị sidebar chém mất */
+}
+
+/* ================= CỘT TRÁI (SIDEBAR) ================= */
+.sidebar {
+    width: 32%;
+    background-color: var(--sidebar-bg);
+    color: var(--white);
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Ảnh đại diện */
+.avatar-box {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 4px solid var(--sidebar-bg);
+    outline: 3px solid var(--primary-color); /* Viền ngoài màu xanh */
+    background-image: url("../img/o5ewkorocffqgwayjsuf.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Tiêu đề mục Sidebar */
+h3.section-title {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+/* List thông tin chung */
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 300;
+}
+
+.sidebar .icon {
+    font-size: 18px;
+    width: 25px; /* Cố định chiều rộng để thẳng hàng */
+    text-align: center;
+}
+
+/* Skill Tags (Viên thuốc) */
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills li {
+    background: rgba(255,255,255,0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Thanh tiến trình ngoại ngữ */
+.lang-item {
+    margin-bottom: 15px;
+}
+.lang-name {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+}
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+.progress {
+    height: 100%;
+    background-color: var(--primary-color);
+}
+.lang-item small {
+    color: #94a3b8;
+    font-size: 11px;
+    font-style: italic;
+}
+
+/* ================= CỘT PHẢI (MAIN CONTENT) ================= */
+.main-content {
+    width: 68%;
+    padding: 60px 50px;
+    background-color: var(--white);
+}
+
+/* Header Tên */
+.header {
+    margin-bottom: 50px;
+}
+.name {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--sidebar-bg);
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+.job-title {
+    font-size: 16px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.summary {
+    color: var(--text-light);
+    text-align: justify;
+    font-size: 14px;
+}
+
+/* Tiêu đề mục chính */
+h3.main-title {
+    font-size: 20px;
+    color: var(--sidebar-bg);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Tạo dòng kẻ ngang bên cạnh tiêu đề */
+h3.main-title::after {
+    content: '';
+    flex: 1; /* Tự động kéo dài hết khoảng trống */
+    height: 2px;
+    background-color: #e2e8f0;
+}
+h3.main-title::before {
+    content: '';
+    width: 8px;
+    height: 30px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+/* Content chung */
+.content-section {
+    margin-bottom: 40px;
+}
+.content-section p {
+    color: var(--text-main);
+    text-align: justify;
+    font-size: 14px;
+}
+
+/* --- TIMELINE (Dùng cho Học vấn & Dự án) --- */
+.timeline {
+    border-left: 2px solid #e2e8f0;
+    padding-left: 30px;
+    margin-left: 5px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Dấu chấm tròn trên dòng kẻ */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -37px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: var(--white);
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item .time {
+    display: inline-block;
+    background-color: #eff6ff;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 15px;
+    margin-bottom: 8px;
+}
+
+.timeline-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--sidebar-bg);
+}
+
+.timeline-item .sub-title {
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+/* Danh sách Chứng chỉ & Hoạt động */
+.certificate-list, .activity-list {
+    list-style: none;
+}
+.certificate-list li, .activity-list li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+.certificate-list li::before, .activity-list li::before {
+    content: '✓';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
