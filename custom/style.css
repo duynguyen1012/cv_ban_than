@@ -1,0 +1,104 @@
+﻿/* ==================== BÀI 4: CSS CƠ BẢN ==================== */
+
+/* 1. Body: background-color, font-family */
+body {
+    background-color: #f0f2f5; /* Màu nền xám nhẹ để làm nổi bật phần nội dung trắng */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font dễ đọc */
+    margin: 0;
+    padding: 20px;
+}
+
+/* 2. Div bao nội dung: margin, padding, border */
+/* Class Selector (Bài 5) */
+.content-wrapper {
+    background-color: white; /* Ông thích màu trắng nên nền nội dung để trắng tinh nhé */
+    width: 800px;
+    max-width: 100%;
+    
+    /* Đơn vị đo rem và px (Bài 5) */
+    padding: 2rem; 
+    margin: 0 auto; /* Căn giữa trang */
+    
+    border: 1px solid #ccc; /* Border thường */
+}
+
+/* ==================== BÀI 5: ĐỘ ƯU TIÊN & SELECTOR ==================== */
+
+/* DEMO ĐỘ ƯU TIÊN: ID Selector ghi đè Class Selector  */
+/* Ở trên class .content-wrapper có border màu xám (#ccc). 
+   Nhưng ID #main-container bên dưới sẽ ghi đè thành màu xanh đậm */
+#main-container {
+    border: 2px solid #0056b3; 
+}
+
+/* Element Selector (Bài 5) */
+h1 {
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* 3. img, table, input phải có margin / padding / border phù hợp (Bài 4) */
+
+img {
+    border: 5px solid #eee;
+    padding: 5px;
+    margin: 1rem 0;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Padding cho ô bảng */
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Style cho Form & Input (Bài 4 yêu cầu input có style) */
+.form-group {
+    margin-bottom: 1.5rem; /* Margin giữa các input */
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 10px; /* Padding bên trong input */
+    border: 1px solid #ccc; /* Border input */
+    border-radius: 4px;
+    box-sizing: border-box; /* Đảm bảo padding không làm vỡ layout */
+    margin-top: 5px;
+}
+
+/* Nút submit cho đẹp trai */
+.btn-submit {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài kiểm tra thực hành HTML & CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="main-container" class="content-wrapper">
+
+        <h1>THỰC HÀNH HTML & CSS</h1>
+
+        <p>
+            Chào mừng đến với bài thực hành.<br>
+            Trang web được xây dựng để demo các kỹ năng HTML5/CSS3, từ cấu trúc cơ bản đến xử lý form và bảng biểu.
+        </p>
+
+        <img src="img/OIP.jpg" alt="Ảnh minh họa bài thực hành">
+
+        <br>
+
+        <p>Liên kết trường: <a href="https://cmcuni.edu.vn" target="_blank">Đại học CMC</a></p>
+
+        <hr>
+
+        <h3>Sở thích cá nhân (Unordered List)</h3>
+        <ul>
+            <li>Cầu lông</li>
+            <li>Cờ vua </li>
+            <li>Lập trình</li>
+        </ul>
+
+        <h3>Các bước làm bài (Ordered List)</h3>
+        <ol>
+            <li>Tạo file index và style</li>
+            <li>Viết mã HTML cho cấu trúc trang</li>
+            <li>Viết mã CSS để trang trí</li>
+            <li>Kiểm tra hiển thị và nộp bài</li>
+        </ol>
+
+        <h3>Bảng điểm học tập</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên Môn Học</th>
+                    <th>Điểm</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Lập trình Web</td>
+                    <td>9.5</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Cơ sở dữ liệu</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Nhập môn AI</td>
+                    <td>8.5</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h3>Form Đăng Ký Thông Tin</h3>
+        
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Nhập họ tên">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@cmcuni.edu.vn">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <button type="submit" class="btn-submit">Gửi thông tin</button>
+        </form>
+
+    </div> </body>
+</html>
+
