@@ -4,28 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Nguyễn Đức Duy - IT Student</title>
+    <meta name="description" content="CV cá nhân của Nguyễn Đức Duy - Sinh viên Công nghệ thông tin, định hướng Full-stack.">
     <link rel="stylesheet" href="./custom/cv-duy.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="cv-container">
         <aside class="sidebar">
-            <div class="avatar-box"></div>
+            <div class="avatar-box" aria-label="Ảnh đại diện Nguyễn Đức Duy"></div>
             
             <div class="sidebar-section contact-info">
                 <h3 class="section-title">Thông tin liên hệ</h3>
-                <ul>
-                    <li><span class="icon">📅</span> 2006</li>
-                    <li><span class="icon">📍</span> Nghĩa Tân, Cầu Giấy, HN</li>
-                    <li><span class="icon">📞</span> 0397199694</li>
-                    <li><span class="icon">📧</span> duyndpht@gmail.com</li>
-                    </ul>
+                <ul class="contact-list">
+                    <li>
+                        <span class="icon">📅</span>
+                        <div>
+                            <span class="label">Năm sinh</span>
+                            <span class="value">2006</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">📍</span>
+                        <div>
+                            <span class="label">Địa chỉ</span>
+                            <span class="value">Nghĩa Tân, Cầu Giấy, Hà Nội</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">📞</span>
+                        <div>
+                            <span class="label">Điện thoại</span>
+                            <a class="value" href="tel:+84397199694">0397 199 694</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">📧</span>
+                        <div>
+                            <span class="label">Email</span>
+                            <a class="value" href="mailto:duyndpht@gmail.com">duyndpht@gmail.com</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
             <div class="sidebar-section skills">
                 <h3 class="section-title">Kỹ năng chuyên môn</h3>
-                <ul>
+                <ul class="tag-list">
                     <li>HTML5/CSS3</li>
                     <li>Java Core</li>
                     <li>Python Basic</li>
@@ -33,6 +60,7 @@
                     <li>VS Code</li>
                     <li>Git/Github</li>
                 </ul>
+                <div class="skill-note">Luôn cập nhật thêm Git Flow, UI/UX cơ bản và REST API.</div>
             </div>
 
             <div class="sidebar-section languages">
@@ -47,7 +75,7 @@
 
             <div class="sidebar-section hobbies">
                 <h3 class="section-title">Sở thích</h3>
-                <ul>
+                <ul class="hobby-list">
                     <li>🏸 Cầu lông</li>
                     <li>♟️ Cờ vua</li>
                     <li>💪 Gym & Fitness</li>
@@ -59,12 +87,34 @@
 
         <main class="main-content">
             <header class="header">
-                <h1 class="name">NGUYỄN ĐỨC DUY</h1>
-                <h2 class="job-title">SINH VIÊN CÔNG NGHỆ THÔNG TIN</h2>
-                <p class="summary">
-                    Là sinh viên trường Đại học CMC. Tôi là người cầu tiến, khao khát khám phá công nghệ mới và đam mê sự tối giản. 
-                    Với tinh thần trách nhiệm cao, tôi luôn mong muốn hoàn thiện bản thân mỗi ngày để trở thành phiên bản tốt hơn.
-                </p>
+                <div class="header-top">
+                    <div>
+                        <h1 class="name">NGUYỄN ĐỨC DUY</h1>
+                        <h2 class="job-title">Sinh viên Công nghệ Thông tin</h2>
+                        <p class="summary">
+                            Là sinh viên Đại học CMC, khao khát khám phá công nghệ mới và đam mê sự tối giản.
+                            Tôi luôn mong muốn hoàn thiện bản thân mỗi ngày để trở thành phiên bản tốt hơn.
+                        </p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="badge">Open to Internship</span>
+                        <p>Định hướng Full-stack, ưu tiên trải nghiệm UI mượt và code sạch.</p>
+                        <div class="quick-stats">
+                            <div>
+                                <strong>01+</strong>
+                                <span>Dự án CV</span>
+                            </div>
+                            <div>
+                                <strong>03</strong>
+                                <span>Ngôn ngữ</span>
+                            </div>
+                            <div>
+                                <strong>2026</strong>
+                                <span>Mục tiêu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </header>
 
             <section class="content-section">
@@ -73,6 +123,9 @@
                     Trở thành một <strong>Lập trình viên Full-stack</strong> chuyên nghiệp trong 3 năm tới. 
                     Áp dụng các kiến thức nền tảng về Java và Web để xây dựng các sản phẩm thực tế có ích cho cộng đồng.
                 </p>
+                <div class="callout">
+                    Ưu tiên rèn luyện thuật toán, kỹ năng teamwork và nền tảng backend để phát triển toàn diện.
+                </div>
             </section>
 
             <section class="content-section">
