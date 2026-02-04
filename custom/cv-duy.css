@@ -7,6 +7,9 @@
     --text-light: #64748b;       /* Màu chữ phụ */
     --bg-body: #f1f5f9;          /* Nền trang xám nhạt */
     --white: #ffffff;
+    --card-bg: #f8fafc;
+    --border-light: #e2e8f0;
+    --shadow-soft: 0 20px 45px rgba(15, 23, 42, 0.15);
 }
 
 /* --- RESET & FONT --- */
@@ -31,7 +34,8 @@ body {
     width: 1000px;
     background-color: var(--white);
     display: flex;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Bóng đổ xịn */
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
     overflow: hidden; /* Để bo góc không bị sidebar chém mất */
 }
 
@@ -57,6 +61,7 @@ body {
     background-image: url("../img/o5ewkorocffqgwayjsuf.png");
     background-size: cover;
     background-position: center;
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
 }
 
 /* Tiêu đề mục Sidebar */
@@ -91,19 +96,49 @@ h3.section-title {
     text-align: center;
 }
 
+.contact-list li {
+    align-items: flex-start;
+}
+
+.contact-list .label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-list .value {
+    display: block;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.contact-list .value:hover {
+    color: var(--primary-color);
+}
+
 /* Skill Tags (Viên thuốc) */
-.skills ul {
+.skills .tag-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.skills li {
+.skills .tag-list li {
     background: rgba(255,255,255,0.1);
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 13px;
     border: 1px solid rgba(255,255,255,0.2);
+}
+
+.skill-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Thanh tiến trình ngoại ngữ */
@@ -133,6 +168,10 @@ h3.section-title {
     font-style: italic;
 }
 
+.hobby-list li {
+    font-size: 13px;
+}
+
 /* ================= CỘT PHẢI (MAIN CONTENT) ================= */
 .main-content {
     width: 68%;
@@ -144,6 +183,14 @@ h3.section-title {
 .header {
     margin-bottom: 50px;
 }
+
+.header-top {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
 .name {
     font-size: 40px;
     font-weight: 800;
@@ -163,6 +210,54 @@ h3.section-title {
     color: var(--text-light);
     text-align: justify;
     font-size: 14px;
+}
+
+.highlight-card {
+    min-width: 240px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 18px;
+    padding: 18px 20px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.12);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.highlight-card p {
+    font-size: 13px;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    text-align: center;
+}
+
+.quick-stats strong {
+    display: block;
+    font-size: 18px;
+    color: var(--sidebar-bg);
+}
+
+.quick-stats span {
+    font-size: 11px;
+    color: var(--text-light);
 }
 
 /* Tiêu đề mục chính */
@@ -198,6 +293,16 @@ h3.main-title::before {
     color: var(--text-main);
     text-align: justify;
     font-size: 14px;
+}
+
+.callout {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: var(--card-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 12px;
+    font-size: 13px;
+    color: var(--text-main);
 }
 
 /* --- TIMELINE (Dùng cho Học vấn & Dự án) --- */
@@ -264,4 +369,38 @@ h3.main-title::before {
     font-weight: bold;
     position: absolute;
     left: 0;
+}
+
+@media (max-width: 960px) {
+    .cv-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sidebar,
+    .main-content {
+        width: 100%;
+    }
+
+    .header-top {
+        flex-direction: column;
+    }
+
+    .highlight-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .main-content {
+        padding: 40px 25px;
+    }
+
+    .name {
+        font-size: 32px;
+    }
 }
