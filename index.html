@@ -1,149 +1,376 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Nguyễn Đức Duy - IT Student</title>
-    <link rel="stylesheet" href="./custom/cv-duy.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Nguyễn Đức Duy - Portfolio</title>
+    <!-- Import font Inter hiện đại -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset & Biến màu sắc Minimalist */
+        :root {
+            --bg-color: #fcfcfc;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --accent-color: #2563eb;
+            --border-color: #e5e7eb;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 1. Header / About Me */
+        header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.05rem;
+            margin-bottom: 8px;
+        }
+
+        header h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .objective {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: #374151;
+        }
+
+        /* Tiêu đề các mục */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        /* 2. Kỹ năng chuyên môn (Skills) */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #f3f4f6;
+            color: #374151;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* 3. Dự án nổi bật (Projects) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .project-tech {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            background-color: #eff6ff;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-highlight {
+            font-size: 0.9rem;
+            background-color: #f8fafc;
+            border-left: 3px solid var(--accent-color);
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            color: #334155;
+            font-style: italic;
+        }
+
+        .project-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-link svg {
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive cho Mobile */
+        @media (max-width: 600px) {
+            .skills-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="cv-container">
-        <aside class="sidebar">
-            <div class="avatar-box"></div>
-            
-            <div class="sidebar-section contact-info">
-                <h3 class="section-title">Thông tin liên hệ</h3>
-                <ul>
-                    <li><span class="icon">📅</span> 2006</li>
-                    <li><span class="icon">📍</span> Nghĩa Tân, Cầu Giấy, HN</li>
-                    <li><span class="icon">📞</span> 0397199694</li>
-                    <li><span class="icon">📧</span> duyndpht@gmail.com</li>
-                    </ul>
-            </div>
+    <div class="container">
+        
+        <!-- 1. Header / Giới thiệu -->
+        <header>
+            <h1>Nguyễn Đức Duy</h1>
+            <h2>Sinh viên Công nghệ Thông tin - Lớp 24IT3, Đại học CMC</h2>
+            <p class="objective">
+                Cầu tiến, đam mê khám phá các công nghệ mới, định hướng phát triển chuyên sâu trong mảng 
+                <strong>Software Engineering</strong> và <strong>AI/Machine Learning</strong>.
+            </p>
+        </header>
 
-            <div class="sidebar-section skills">
-                <h3 class="section-title">Kỹ năng chuyên môn</h3>
-                <ul>
-                    <li>HTML5/CSS3</li>
-                    <li>Java Core</li>
-                    <li>Python Basic</li>
-                    <li>C#</li>
-                    <li>VS Code</li>
-                    <li>Git/Github</li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section languages">
-                <h3 class="section-title">Ngoại ngữ</h3>
-                <div class="lang-item">
-                    <span class="lang-name">Tiếng Anh (TOEIC)</span>
-                    <span class="lang-score">510/990</span>
-                    <div class="progress-bar"><div class="progress" style="width: 55%"></div></div>
-                    <small>(Mục tiêu: 800+ trong năm tới)</small>
-                </div>
-            </div>
-
-            <div class="sidebar-section hobbies">
-                <h3 class="section-title">Sở thích</h3>
-                <ul>
-                    <li>🏸 Cầu lông</li>
-                    <li>♟️ Cờ vua</li>
-                    <li>💪 Gym & Fitness</li>
-                    <li>📚 Đọc sách (The Black Swan)</li>
-                    <li>✈️ Du lịch</li>
-                </ul>
-            </div>
-        </aside>
-
-        <main class="main-content">
-            <header class="header">
-                <h1 class="name">NGUYỄN ĐỨC DUY</h1>
-                <h2 class="job-title">SINH VIÊN CÔNG NGHỆ THÔNG TIN</h2>
-                <p class="summary">
-                    Là sinh viên trường Đại học CMC. Tôi là người cầu tiến, khao khát khám phá công nghệ mới và đam mê sự tối giản. 
-                    Với tinh thần trách nhiệm cao, tôi luôn mong muốn hoàn thiện bản thân mỗi ngày để trở thành phiên bản tốt hơn.
-                </p>
-            </header>
-
-            <section class="content-section">
-                <h3 class="main-title">Mục tiêu nghề nghiệp</h3>
-                <p>
-                    Trở thành một <strong>Lập trình viên Full-stack</strong> chuyên nghiệp trong 3 năm tới. 
-                    Áp dụng các kiến thức nền tảng về Java và Web để xây dựng các sản phẩm thực tế có ích cho cộng đồng.
-                </p>
-            </section>
-
-            <section class="content-section">
-                <h3 class="main-title">Học vấn</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="time">2024 - Hiện tại</span>
-                        <div class="timeline-content">
-                            <h4>Đại học CMC (CMC University)</h4>
-                            <p class="sub-title">Chuyên ngành: Công nghệ thông tin</p>
-                            <p>GPA: <strong>(Đang cập nhật...)</strong></p>
-                            <p><i>Các môn tiêu biểu: Nhập môn lập trình, Cơ sở dữ liệu, Cấu trúc dữ liệu & Giải thuật.</i></p>
-                        </div>
+        <!-- 2. Kỹ năng chuyên môn -->
+        <section>
+            <h2 class="section-title">Kỹ năng chuyên môn</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-category">
+                    <h3>Ngôn ngữ & Web</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">C</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">SQL</span>
                     </div>
                 </div>
-            </section>
 
-            <section class="content-section">
-                <h3 class="main-title">Dự án cá nhân / Bài tập lớn</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="time">01/2026</span>
-                        <div class="timeline-content">
-                            <h4>Website CV Cá Nhân</h4>
-                            <p class="sub-title">Vai trò: Frontend Developer (Solo)</p>
-                            <p>- Xây dựng trang web CV cá nhân responsive.</p>
-                            <p>- Công nghệ sử dụng: <strong>HTML5, CSS3 (Flexbox, Grid)</strong>.</p>
-                            <p>- Kết quả: Hiểu rõ về bố cục web và cách tối ưu giao diện.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <span class="time">Sắp tới</span>
-                        <div class="timeline-content">
-                            <h4>[Tên dự án môn học Java/Python...]</h4>
-                            <p class="sub-title">Vai trò: [Làm nhóm/Cá nhân]</p>
-                            <p>- Mô tả: [Xây dựng phần mềm quản lý sinh viên...]</p>
-                        </div>
+                <div class="skill-category">
+                    <h3>Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="tag">ASP.NET Core MVC</span>
+                        <span class="tag">Entity Framework Core</span>
+                        <span class="tag">Spring Boot</span>
                     </div>
                 </div>
-            </section>
 
-            <section class="content-section">
-                <h3 class="main-title">Chứng chỉ & Giải thưởng</h3>
-                <ul class="certificate-list">
-                    <li>
-                        <strong>Chứng chỉ TOEIC Quốc tế</strong> - IIG Vietnam (Score: 510)
-                    </li>
-                    <li>
-                        <strong>[Chứng chỉ Java Basic]</strong> - [Coursera/Udemy/CMC] (2025)
-                    </li>
-                    <li>
-                        <strong>[Thành thạo tin học văn phòng]</strong> - word, excel, powerpoint
-                    </li>
-                </ul>
-            </section>
+                <div class="skill-category">
+                    <h3>AI / Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span class="tag">CNN</span>
+                        <span class="tag">RNN</span>
+                        <span class="tag">LSTM</span>
+                        <span class="tag">ResNet50</span>
+                        <span class="tag">MobileNetV2</span>
+                        <span class="tag">Gemini API</span>
+                        <span class="tag">Claude API</span>
+                        <span class="tag">OpenAI API</span>
+                    </div>
+                </div>
 
-            <section class="content-section">
-                <h3 class="main-title">Hoạt động ngoại khóa</h3>
-                <ul class="activity-list">
-                    <li>
-                        <strong>Thành viên CLB IT CMC:</strong> Tham gia training và hỗ trợ tổ chức sự kiện tech talk.
-                    </li>
-                    <li>
-                        <strong>Tham gia giải Cầu lông sinh viên:</strong> Giao lưu và rèn luyện sức khỏe.
-                    </li>
-                </ul>
-            </section>
+                <div class="skill-category">
+                    <h3>Công cụ & Môi trường</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Git / GitHub</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Visual Studio</span>
+                        <span class="tag">Ubuntu</span>
+                    </div>
+                </div>
 
-        </main>
+            </div>
+        </section>
+
+        <!-- 3. Dự án nổi bật -->
+        <section>
+            <h2 class="section-title">Dự án nổi bật</h2>
+            <div class="projects-grid">
+
+                <!-- Dự án 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">EduX Bot Auto Study</h3>
+                        <span class="project-tech">Python / AI</span>
+                    </div>
+                    <p class="project-desc">
+                        Dự án tự động hóa tối ưu thời gian học tập trên nền tảng LMS (Hệ sinh thái học tập AI). Tích hợp API Trí tuệ nhân tạo (Gemini) kết hợp phân tích cấu trúc DOM để tự động xử lý hàng loạt bài giảng và bài tập.
+                    </p>
+                    <div class="project-highlight">
+                        <strong>Điểm nhấn:</strong> Thiết kế cơ chế Active Polling (quét DOM thời gian thực) với tốc độ phản hồi phần nghìn giây. Tự động chuyển đổi kịch bản khi AI bị "ảo giác".
+                    </div>
+                    <a href="https://github.com/duynguyen1012/bot_hoc_tap" target="_blank" class="project-link">
+                        Xem mã nguồn trên GitHub
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Dự án 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Cửa hàng Điện thoại Online</h3>
+                        <span class="project-tech">Backend / C#</span>
+                    </div>
+                    <p class="project-desc">
+                        Phát triển ứng dụng web thương mại điện tử từ con số 0. Quản lý luồng kiến trúc backend, thiết kế Controller điều hướng và xây dựng giao diện động bằng Razor views.
+                    </p>
+                    <div class="project-highlight">
+                        <strong>Công nghệ:</strong> ASP.NET Core MVC kết hợp cơ sở dữ liệu SQLite. Quản lý chặt chẽ kiến trúc MVC và vòng đời dữ liệu.
+                    </div>
+                    <a href="#" class="project-link">
+                        Đang cập nhật link...
+                    </a>
+                </div>
+
+                <!-- Dự án 3 (Giữ chỗ) -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Dự án thứ 3</h3>
+                        <span class="project-tech">Công nghệ</span>
+                    </div>
+                    <p class="project-desc">
+                        Mô tả ngắn gọn về dự án thứ 3 của bạn. Chức năng chính là gì, phục vụ cho ai và mang lại giá trị cốt lõi nào.
+                    </p>
+                    <div class="project-highlight">
+                        <strong>Điểm nhấn:</strong> Giải quyết bài toán A bằng thuật toán B.
+                    </div>
+                    <a href="#" class="project-link">
+                        Xem chi tiết
+                    </a>
+                </div>
+
+                <!-- Dự án 4 (Giữ chỗ) -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Dự án thứ 4</h3>
+                        <span class="project-tech">Công nghệ</span>
+                    </div>
+                    <p class="project-desc">
+                        Mô tả ngắn gọn về dự án thứ 4 của bạn. Chức năng chính là gì, phục vụ cho ai và mang lại giá trị cốt lõi nào.
+                    </p>
+                    <div class="project-highlight">
+                        <strong>Điểm nhấn:</strong> Ứng dụng mô hình AI C vào luồng xử lý D.
+                    </div>
+                    <a href="#" class="project-link">
+                        Xem chi tiết
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Nguyễn Đức Duy. Designed with Minimalist style.</p>
+        </footer>
+
     </div>
-
 </body>
 </html>
